@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title_block %} Profile {% endblock %}
+{% block body_block %}
+
+<form method="POST">
+{{ form.as_p}}
+{% csrf_token %}
+<br>
+<br>
+<button type="submit" class="btn btn-warning btn-sm">Save</button>
+
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title_block %} Product_Details {% endblock %}
+{% block body_block %}
+<div style="weidth:300px, height:10px">
+<img src="/media/{{object.mainimage}}">
+</div>
+<h5>Name: {{object.name}}</h5>
+<h5>Price: ${{object.price}}</h5>
+<h5>preview_text: {{object.preview_text}}</h5>
+<h5>old_price: {{object.old_price}}</h5>
+<h5>detail_text: {{object.detail_text}}</h5>
+<h5> category :{{object.category}}</h5>
+
+<a href="{% url 'App_order:add' pk=object.pk %}">Add to Cart</a>
+{% endblock %}

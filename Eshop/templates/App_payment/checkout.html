@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title_block %} Sign_Up {% endblock %}
+{% block body_block %}
+<h2>Billing Your Addresh</h2>
+<form method="POST">
+{{ form.as_p }}
+{% csrf_token %}
+<button type="submit" class="btn btn-success btn-sm">Saved Addesh</button>
+<br>
+<div class="container">
+{% for order_item in order_items %}
+<p>{{order_item.item.name}}X{{order_item.item.quantity}}</p>
+{% endfor %}
+<p>order Total:&#2547 {{order_total|floatformat:2}}</p>
+</div>
+
+
+
+</form>
+{% endblock %}
